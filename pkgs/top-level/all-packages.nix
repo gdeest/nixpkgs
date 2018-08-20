@@ -306,6 +306,7 @@ with pkgs;
   buildDotnetPackage = callPackage ../build-support/build-dotnet-package { };
 
   fetchgx = callPackage ../build-support/fetchgx { };
+  flopoco = callPackage ../development/tools/flopoco { };
 
   resolveMirrorURLs = {url}: fetchurl {
     showURLs = true;
@@ -3173,6 +3174,11 @@ with pkgs;
   ibniz = callPackage ../tools/graphics/ibniz { };
 
   icecast = callPackage ../servers/icecast { };
+
+  sollya = sollya_4_1;
+  sollya_4_1 = callPackage ../development/libraries/sollya/4.1.nix {
+    fplll = fplll_20160331;
+  };
 
   darkice = callPackage ../tools/audio/darkice { };
 
